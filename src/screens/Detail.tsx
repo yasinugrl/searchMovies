@@ -13,6 +13,7 @@ const Detail = (props: DetailProps) => {
     const [isFavori, setIsFavori] = React.useState(false)
     const [isHidden, setHidden] = React.useState(false)
 
+
     const dispatch = useDispatch()
 
     React.useEffect(() => {
@@ -48,6 +49,10 @@ const Detail = (props: DetailProps) => {
                             let current = favorites
                             current.push(item)
                             Storage.FavoritesData.set(current)
+                        } else {
+                            const removedFavoreites = favorites.filter((data) => data.id !== item.id)
+                            Storage.FavoritesData.set(removedFavoreites)
+                            setIsFavori(false)
                         }
                     }}
                 >

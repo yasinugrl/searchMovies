@@ -16,7 +16,7 @@ interface MovieItemProps {
 const MovieItem = (props: MovieItemProps) => {
     const { item } = props
     return (
-        <TouchableOpacity onPress={() => props.navigation.navigate('Detail', { item })} style={{ padding: 10, backgroundColor: 'white', marginTop: 20, borderRadius: 10, flexDirection: 'row' }}>
+        <TouchableOpacity testID='dataItem' onPress={() => props.navigation.navigate('Detail', { item })} style={{ padding: 10, backgroundColor: 'white', marginTop: 20, borderRadius: 10, flexDirection: 'row' }}>
             <Image source={{ uri: item.image }} style={{ height: 100, width: '20%', borderRadius: 5 }} />
             <View style={{ marginLeft: 20 }}>
                 <Text style={styles.title}>{item.title}</Text>
